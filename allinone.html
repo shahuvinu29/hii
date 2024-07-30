@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Love Story Book</title>
+  <style>
+   body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #f3f4f6, #d9e1e8);
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      overflow: hidden;
+    }
+    .book {
+      width: 90%;
+      max-width: 900px;
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+    }
+    .cover, .page {
+      padding: 20px;
+      display: none;
+    }
+    .cover {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      background: #007bff;
+      color: white;
+      height: 100vh;
+      position: absolute;
+      width: 100%;
+      top: 0;
+      left: 0;
+      transition: opacity 0.5s ease-in-out;
+    }
+    .cover h1 {
+      font-size: 3rem;
+      margin: 0;
+    }
+    .cover p {
+      font-size: 1.5rem;
+      margin: 10px 0;
+    }
+    .cover button {
+      background: #28a745;
+      color: white;
+      border: none;
+      padding: 12px 24px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 1rem;
+      transition: background-color 0.3s ease;
+    }
+    .cover button:hover {
+      background-color: #218838;
+    }
+    .page {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 30px;
+      box-sizing: border-box;
+    }
+    .page h2 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+      color: #333;
+    }
+    .page p {
+      font-size: 1.125rem;
+      line-height: 1.6;
+      color: #555;
+    }
+    .controls {
+      display: flex;
+      justify-content: space-between;
+      padding: 20px;
+      background: #007bff;
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      box-shadow: 0 -2px 10px rgba(0,0,0,0.2);
+    }
+    .controls button {
+      background: #fff;
+      color: #007bff;
+      border: 1px solid #007bff;
+      padding: 12px 24px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 1rem;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+    .controls button:hover {
+      background-color: #007bff;
+      color: #fff;
+    }
+  </style>
+</head>
+<body>
+  <div class="book">
+    <div class="cover" id="cover">
+      <h1>Love Story Book</h1>
+      <p>by Vinay Kumar</p>
+      <button onclick="openBook()">Open Book</button>
+    </div>
+    <div class="page" id="toc" style="display: none;">
+      <h2>Table of Contents</h2>
+      <ul>
+        <li onclick="goToChapter('chapter1')">Chapter 1: Meeting at the Coaching Center</li>
+        <li onclick="goToChapter('chapter2')">Chapter 2: The First Connection</li>
+        <li onclick="goToChapter('chapter3')">Chapter 3: Confessions of Love</li>
+        <li onclick="goToChapter('chapter4')">Chapter 4: First Meeting and Romance</li>
+        <li onclick="goToChapter('chapter5')">Chapter 5: Intimacy and Secrets</li>
+        <li onclick="goToChapter('chapter6')">Chapter 6: The Betrayal</li>
+        <li onclick="goToChapter('chapter7')">Chapter 7: College Life and Long Distance</li>
+        <li onclick="goToChapter('chapter8')">Chapter 8: The Wedding and Aftermath</li>
+        <li onclick="goToChapter('chapter9')">Chapter 9: Distance and Struggles</li>
+        <li onclick="goToChapter('chapter10')">Chapter 10: The Struggle for Love</li>
+        <li onclick="goToChapter('chapter11')">Chapter 11: Challenges of Long-Distance</li>
+        <li onclick="goToChapter('chapter12')">Chapter 12: The Ultimate Test</li>
+        <li onclick="goToChapter('chapter13')">Chapter 13: The Hopeful Future</li>
+      </ul>
+    </div>
+
+    <div class="page" id="chapter1" style="display: none;">
+      <h2>Chapter 1: Meeting at the Coaching Center</h2>
+      <p>Ek ladka tha jiska naam tha Vinay Kumar. Ek din, Sant Kabir Coaching Center me padhte waqt, usi coaching center me ek ladki aayi jiska naam tha Shahnaj. Vinay Shahnaj ko dekhte hi usko pasand karne laga. Shahnaj bhi kabhi kabhi Vinay ko dekha karti thi, lekin dono me baatein nahi hoti thi. Shahnaj bahut patli thi aur Vinay usko hamesha dekhta rehta tha, baat karne ka bahut mann karta tha.</p>
+    </div>
+    <div class="page" id="chapter2" style="display: none;">
+      <h2>Chapter 2: The First Connection</h2>
+      <p>Ek din, Shahnaj mela me Vinay ki behen ko apna number di aur boli call karna. Is number ke zariye Vinay aur Shahnaj ne dheere dheere baat karna shuru kiya. Shahnaj ki bari behen, Tamanna, janti thi ki Vinay sirf dost ke jaise baat karta hai, aur kabhi kabhi baatein bhi kara deti thi.</p>
+    </div>
+    <div class="page" id="chapter3" style="display: none;">
+      <h2>Chapter 3: Confessions of Love</h2>
+      <p>Vinay ne ek din himmat karke Shahnaj ko bola "I love you". Shahnaj ne bhi jawab me kaha "I love you too". Dono ke beech love wali baatein shuru ho gayi. Tamanna ko shuru me nahi pata tha ki dono pyar karne lage hain, par ek din usne chat padh liya aur sab kuchh samajh gayi. Phir Tamanna ne bhi dono ko support karna shuru kar diya.</p>
+    </div>
+    <div class="page" id="chapter4" style="display: none;">
+      <h2>Chapter 4: First Meeting and Romance</h2>
+      <p>Vinay ne 10th ka exam dene se pehle, thandi ke mahine me Shahnaj se milne ka plan banaya. Pehli mulaqat me Shahnaj ek sundar dress me aayi thi. Vinay usse darte darte baat karne laga. Jab Vinay ne Shahnaj ka haath pakar ke usko hug kiya, Vinay ka pair bahut kaanp raha tha. Shahnaj ne uske pair ko daba ke himmat di. Dono ne pehli baar kiss kiya aur romance shuru ho gaya.</p>
+    </div>
+    <div class="page" id="chapter5" style="display: none;">
+      <h2>Chapter 5: Intimacy and Secrets</h2>
+      <p>Dono ke beech romance badhne laga aur ek din Vinay aur Shahnaj ne sex ka plan banaya. Tamanna ko pata tha aur usne bhi madad ki. Pehle din kuchh problems aayi, par dheere dheere sab theek ho gaya. Tamanna se chhup ke Shahnaj Vinay se milti rahi aur sex unke rishte ka ek common part ban gaya. Dono ne shaadi tak ka plan bhi kar liya.</p>
+    </div>
+    <div class="page" id="chapter6" style="display: none;">
+      <h2>Chapter 6: The Betrayal</h2>
+      <p>12th me admission ke baad, Vinay aur Shahnaj ek hi coaching me padhne lage. Shahnaj ki ek dost thi Banti. Vinay dheere dheere Banti se baat karna shuru kar diya aur Banti ne bhi usko like kar liya. Vinay ne Banti ko propose kar diya aur wo accept bhi kar liya. Vinay, Shahnaj se chhup ke Banti se milta raha. Jab Shahnaj ko is baat ka pata chala, wo toot gayi. Vinay ne usko manaya aur Shahnaj ne use ek mauka diya.</p>
+    </div>
+    <div class="page" id="chapter7" style="display: none;">
+      <h2>Chapter 7: College Life and Long Distance</h2>
+      <p>Vinay ne B.Tech me admission le liya aur Shahnaj ne uski bahut madad ki. Vinay Chennai college me chala gaya aur Shahnaj Bihar me coaching padhane lagi. Shahnaj ne chori se Instagram ID banayi aur Vinay se jhoot bolne lagi. Vinay ko pata chal gaya aur dono me jhagra hone laga. Shahnaj apne papa ke pass Delhi gayi aur waha pe dost bana liya. Vinay ko dard ho raha tha aur wo Shahnaj ko samjhane ki koshish kar raha tha.</p>
+    </div>
+    <div class="page" id="chapter8" style="display: none;">
+      <h2>Chapter 8: The Wedding and Aftermath</h2>
+      <p>Shahnaj ke bade papa ke ladke ki shaadi thi aur us shaadi me Vinay ne apna chat dekha jo Shahnaj ne Banti ko bheja tha. Vinay ne Shahnaj ko manaya aur uske ghar gaya. Vinay ne Shahnaj ko unblock karwaya aur dono ne mandir me shaadi kar li. Shaadi ke baad dono ka pyar aur bhi gehra ho gaya. Shahnaj Vinay se pyaar karti thi lekin Delhi jaane ke baad uska behavior badalne laga.</p>
+    </div>
+    <div class="page" id="chapter9" style="display: none;">
+      <h2>Chapter 9: Distance and Struggles</h2>
+      <p>Shahnaj ne apni college life me bahut struggle kiya aur Vinay ke saath milne ka plan banaya. Dono ne apni zindagi ke challenges face kiye aur apne pyar ko aur bhi strong banaya. Shahnaj ne Vinay se kaha ki wo apni problems ke baare me khul ke bataye. Vinay ne bhi apni life ke challenges ko Shahnaj ke samne rakha aur dono ne milke solutions find kiye.</p>
+    </div>
+    <div class="page" id="chapter10" style="display: none;">
+      <h2>Chapter 10: The Struggle for Love</h2>
+      <p>Vinay ne Shahnaj ko Bihar aaye aur Shahnaj ko propose kiya. Shahnaj ne kaha ki wo bhi Vinay se shaadi karna chahti hai. Dono ne milke apne pyar ko samjha aur shaadi ki planning ki. Dono ke beech communication aur understanding badh gayi. Shahnaj ne Vinay ki family se milne ke liye Bihar aaye aur Vinay se propose kiya. Vinay ne Shahnaj ko support kiya aur dono ne milke apne goals achieve kiye.</p>
+    </div>
+    <div class="page" id="chapter11" style="display: none;">
+      <h2>Chapter 11: Challenges of Long-Distance</h2>
+      <p>Shahnaj ko unki shaadi ki planning aur Vinay ke saath long-distance relationship ki challenges se deal karna pada. Unka relationship strong ban gaya aur dono ne apni zindagi ki planning ki. Vinay ne Shahnaj ko support kiya aur dono ne milke apne goals achieve kiye. Shahnaj ne bhi Vinay ko support kiya aur unka pyaar aur bhi gehra ho gaya.</p>
+    </div>
+    <div class="page" id="chapter12" style="display: none;">
+      <h2>Chapter 12: The Ultimate Test</h2>
+      <p>Ek din Vinay ko ek job offer mila aur usse Delhi shift hona pada. Shahnaj ko is baat se pareshaani hui par usne Vinay ko support kiya. Dono ne milke naye challenges face kiye aur apne relationship ko strong banaya. Vinay ne Delhi shift hone ke baad Shahnaj ko bhi waha bulaya aur dono ne milke naye chapter ki shuruaat ki.</p>
+    </div>
+    <div class="page" id="chapter13" style="display: none;">
+      <h2>Chapter 13: The Hopeful Future</h2>
+      <p>Vinay aur Shahnaj ki shaadi ke baad dono ka relationship aur bhi strong ho gaya. Dono ne milke apni zindagi ki planning ki aur future ke liye hope rakha. Vinay aur Shahnaj ne apni life ko enjoy kiya aur ek dusre ke saath waqt guzarne lage. Unka pyar aur bhi gehra ho gaya aur dono ne milke ek happy future ki taraf badhna shuru kiya.</p>
+    </div>
+
+    <div class="controls">
+      <button onclick="prevPage()">Previous</button>
+      <button onclick="nextPage()">Next</button>
+    </div>
+  </div>
+
+  <script>
+    let currentPage = 'cover';
+
+    function openBook() {
+      document.getElementById('cover').style.display = 'none';
+      document.getElementById('toc').style.display = 'block';
+    }
+
+    function goToChapter(chapterId) {
+      document.querySelector('.page:not([style*="display: none"])').style.display = 'none';
+      document.getElementById('toc').style.display = 'none';
+      document.getElementById(chapterId).style.display = 'block';
+      currentPage = chapterId;
+    }
+
+    function prevPage() {
+      const pages = [
+        'toc', 'chapter1', 'chapter2', 'chapter3', 'chapter4', 'chapter5',
+        'chapter6', 'chapter7', 'chapter8', 'chapter9', 'chapter10',
+        'chapter11', 'chapter12', 'chapter13'
+      ];
+      const currentIndex = pages.indexOf(currentPage);
+      if (currentIndex > 0) {
+        document.getElementById(currentPage).style.display = 'none';
+        currentPage = pages[currentIndex - 1];
+        document.getElementById(currentPage).style.display = 'block';
+        if (currentPage === 'toc') {
+          document.getElementById('cover').style.display = 'none';
+        }
+      }
+    }
+
+    function nextPage() {
+      const pages = [
+        'toc', 'chapter1', 'chapter2', 'chapter3', 'chapter4', 'chapter5',
+        'chapter6', 'chapter7', 'chapter8', 'chapter9', 'chapter10',
+        'chapter11', 'chapter12', 'chapter13'
+      ];
+      const currentIndex = pages.indexOf(currentPage);
+      if (currentIndex < pages.length - 1) {
+        document.getElementById(currentPage).style.display = 'none';
+        currentPage = pages[currentIndex + 1];
+        document.getElementById(currentPage).style.display = 'block';
+        if (currentPage === 'toc') {
+          document.getElementById('cover').style.display = 'none';
+        }
+      }
+    }
+  </script>
+</body>
+</html>
